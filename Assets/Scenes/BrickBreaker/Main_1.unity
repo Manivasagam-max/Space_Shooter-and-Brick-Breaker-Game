@@ -1259,7 +1259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &542115521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1292,7 +1292,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.245454, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1303,7 +1303,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 10}
+  m_Size: {x: 0.509092, y: 10}
   m_EdgeRadius: 0
 --- !u!4 &542115522
 Transform:
@@ -1313,13 +1313,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542115520}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.02033171, w: 0.9997933}
+  m_LocalRotation: {x: -0, y: -0, z: 0.00041664438, w: 0.99999994}
   m_LocalPosition: {x: -9.43, y: -2.51, z: 0}
   m_LocalScale: {x: 1, y: 0.5025009, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.33}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.048}
 --- !u!1 &583650232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,7 +2033,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.25727293, y: 0}
+  m_Offset: {x: 0.25727293, y: 1.6525276}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2044,7 +2044,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48545417, y: 10}
+  m_Size: {x: 0.48545414, y: 6.694945}
   m_EdgeRadius: 0
 --- !u!4 &871705618
 Transform:
@@ -2313,15 +2313,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.43222848, y: 0.5050639}
+    - - {x: 0.41966563, y: 0.45290577}
       - {x: 0.32115984, y: 0.7543236}
-      - {x: 0.12311004, y: 1.0781386}
-      - {x: -0.14055797, y: 1.0481218}
-      - {x: -0.33269987, y: 0.8322508}
-      - {x: -0.45249626, y: 0.34222272}
+      - {x: 0.12939143, y: 0.9216665}
+      - {x: -0.1321827, y: 0.8916496}
+      - {x: -0.20514688, y: 0.8526091}
+      - {x: -0.32223085, y: 0.7279357}
+      - {x: -0.45249626, y: 0.36830285}
       - {x: -0.5, y: -0.5}
       - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
+      - {x: 0.43927982, y: 0.26529184}
   m_UseDelaunayMesh: 0
 --- !u!212 &1299681221
 SpriteRenderer:
@@ -2451,7 +2452,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.31257886, y: 0}
+  m_Offset: {x: -0.31257886, y: 1.8588495}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2462,7 +2463,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3748423, y: 10}
+  m_Size: {x: 0.3748423, y: 6.282301}
   m_EdgeRadius: 0
 --- !u!4 &1357778467
 Transform:
@@ -2866,7 +2867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2057869928
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2899,7 +2900,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.19295228, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2910,7 +2911,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 10}
+  m_Size: {x: 0.61409545, y: 10}
   m_EdgeRadius: 0
 --- !u!4 &2057869929
 Transform:
@@ -2920,13 +2921,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057869927}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.026264153, w: 0.99965507}
+  m_LocalRotation: {x: -0, y: -0, z: -0.01167143, w: 0.9999319}
   m_LocalPosition: {x: 9.34, y: -2.58, z: 0}
   m_LocalScale: {x: 1, y: 0.49555, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.01}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.337}
 --- !u!1 &2066227271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,6 +3018,7 @@ GameObject:
   - component: {fileID: 2089690166}
   - component: {fileID: 2089690165}
   - component: {fileID: 2089690169}
+  - component: {fileID: 2089690170}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -3165,13 +3167,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1edd9e1c714e3df4d953ab38f51920f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballrb: {fileID: 0}
+  ballrb: {fileID: 2089690166}
   inPlay: 0
   paddle: {fileID: 2114618415}
-  speed: 250
+  speed: 275
   Explosion: {fileID: 2288900153424672663, guid: 21221eedb16ebc04a9779bcc28f37abd, type: 3}
-  gm: {fileID: 290260327}
   Powerup: {fileID: 4976237906704043460, guid: 42198317f80ecea4898aded69458daf9, type: 3}
+  bounce: {fileID: 8300000, guid: 747a4f9b458390e4eba059e57769056b, type: 3}
+--- !u!82 &2089690170
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089690164}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 747a4f9b458390e4eba059e57769056b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 96
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2104039015
 GameObject:
   m_ObjectHideFlags: 0

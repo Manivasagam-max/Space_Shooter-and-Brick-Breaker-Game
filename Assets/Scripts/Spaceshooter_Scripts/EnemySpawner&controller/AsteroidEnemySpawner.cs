@@ -24,7 +24,7 @@ public class AsteroidEnemySpawner : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManagerScript>();
-        SpawnObject(); // Start spawning
+        SpawnObject(); 
     }
 
     void Update()

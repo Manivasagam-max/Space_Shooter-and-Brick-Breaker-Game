@@ -9,11 +9,13 @@ public class PaddleScript : MonoBehaviour
     public float leftscreenedge;
     public float rightscreenedge;
     private GameManager gm;
+    private GameManage4S g4s;
     private GamestartScript gs;
     // Start is called before the first frame update
     void Start()
     {
       gm=FindObjectOfType<GameManager>();
+      g4s = FindObjectOfType<GameManage4S>();
       gs=FindObjectOfType<GamestartScript>();
         
     }
@@ -21,7 +23,7 @@ public class PaddleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gm.gameOver){
+        if((gm != null && gm.gameOver)|| (g4s != null && g4s.gameOver)){
             return;
         }
         if(gs.GameStartPanel.activeInHierarchy){
@@ -37,7 +39,8 @@ public class PaddleScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
        // Debug.Log("hit"+other.name);
        if(other.CompareTag("ExtraLife")){
-       gm.UpdateLives(1);
+      if(gm!=null){ gm.UpdateLives(1);}
+      else if(g4s!=null){g4s.UpdateLives(1);}
        Destroy(other.gameObject);
     }
     } 

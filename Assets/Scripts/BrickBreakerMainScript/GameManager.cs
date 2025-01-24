@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     // public Text highScoreText;
     public bool gameOver;
-    private Vector3 initialSpawnPosition; 
+    // private Vector3 initialSpawnPosition; 
     public GameObject gameOverPanel;
     // public GameObject loadLevelPanel;
 
@@ -83,24 +83,31 @@ public class GameManager : MonoBehaviour
     }
     void LoadLevel(){
         currentLevelIndex++;
-        // currentLevelIndex
-        Instantiate(levels[currentLevelIndex],spawnPosition,Quaternion.identity);
-        numberOfBricks=GameObject.FindGameObjectsWithTag("Brick").Length;
-        // score=0;
-        // lives=3;
-        scoreText.text="Score:"+score;
-        // if(loadLevelPanel.activeSelf){
+        
           bscript.ballrb.velocity=Vector2.zero;
           bscript.inPlay=false;
-           // Increment the ball's speed based on the current level
-         bscript.speed += currentLevelIndex * 20; // Increases speed by 5 units per level
-
-         // clamp the ball speed if you want to avoid it going too fast
-         bscript.speed = Mathf.Clamp(bscript.speed, 300, 350); // Adjust the range as needed
-        // }
-        gameOver=false;
-        // loadLevelPanel.SetActive(false);
+          StartCoroutine(LoadNextLevelAfterDelay(1f));
+      
     }
+    IEnumerator LoadNextLevelAfterDelay(float delay)
+{
+    yield return new WaitForSeconds(delay);
+
+    // Instantiate the new level prefab
+    Instantiate(levels[currentLevelIndex], spawnPosition, Quaternion.identity);
+
+    // Update the number of bricks in the scene
+    numberOfBricks = GameObject.FindGameObjectsWithTag("Brick").Length;
+
+    // Increment the ball's speed based on the current level
+    bscript.speed += currentLevelIndex * 20;
+
+    // Clamp the ball speed to avoid excessive speeds
+    bscript.speed = Mathf.Clamp(bscript.speed, 310, 350);
+
+    // Reset game over flag
+    gameOver = false;
+}
     void GameOver(){
         gameOver=true;
         gameOverPanel.SetActive(true);
