@@ -17,13 +17,13 @@ public class FinalBossBullet : MonoBehaviour
     private Transform Spawn_point2;
     [SerializeField]
     private Transform Spawn_point3;
-   
+
 
     public float ShootInterval = 2.5f;
     private float timeSinceLastShot = 0f;  // Timer to track intervals between shots
 
     private GameManagerScript gm;
-     void Start()
+    void Start()
     {
         gm = FindObjectOfType<GameManagerScript>();
         audioSource = GetComponent<AudioSource>();
@@ -58,8 +58,8 @@ public class FinalBossBullet : MonoBehaviour
     void Attack()
     {
         GameObject Laser = Instantiate(Enemy_bullet, Spawn_point1.position, Quaternion.identity);
-        GameObject Laser2=Instantiate(Enemy_bullet, Spawn_point2.position, Quaternion.identity);
-        GameObject Laser3=Instantiate(Enemy_bullet, Spawn_point3.position, Quaternion.identity);
+        GameObject Laser2 = Instantiate(Enemy_bullet, Spawn_point2.position, Quaternion.identity);
+        GameObject Laser3 = Instantiate(Enemy_bullet, Spawn_point3.position, Quaternion.identity);
 
         // Destroy laser after 5 seconds to prevent clutter
         if (audioSource != null && laserSound != null)

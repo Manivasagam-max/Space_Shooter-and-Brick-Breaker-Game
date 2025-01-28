@@ -611,6 +611,7 @@ MonoBehaviour:
   scoreText: {fileID: 1521105409}
   gameOver: 0
   gameOverPanel: {fileID: 821651923}
+  NextLevelPanel: {fileID: 974772301}
   numberOfBricks: 0
   levels:
   - {fileID: 4591547438289611124, guid: eda2f285692b11f46b4211229367e34b, type: 3}
@@ -871,9 +872,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 290260328}
-        m_TargetAssemblyTypeName: GamestartScript, Assembly-CSharp
-        m_MethodName: Game
+      - m_Target: {fileID: 290260327}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: go_to_ThirdLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1193,9 +1194,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 290260328}
-        m_TargetAssemblyTypeName: GamestartScript, Assembly-CSharp
-        m_MethodName: Game
+      - m_Target: {fileID: 290260327}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1523,7 +1524,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit
+  m_Text: 'Back
+
+'
 --- !u!222 &654052720
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1580,10 +1583,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2560, y: 1440}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1652,7 +1655,7 @@ GameObject:
   - component: {fileID: 786386263}
   - component: {fileID: 786386262}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1724,7 +1727,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 290260327}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1907,7 +1910,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Brick Breaker
+  m_text: Level Completed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b03b7a4c74cd6294ca732f49684716ee, type: 2}
   m_sharedMaterial: {fileID: 21207439413246594, guid: b03b7a4c74cd6294ca732f49684716ee, type: 2}
@@ -2130,7 +2133,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.5
 --- !u!222 &974772304
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2921,13 +2924,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057869927}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.01167143, w: 0.9999319}
-  m_LocalPosition: {x: 9.34, y: -2.58, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.004316084, w: 0.9999907}
+  m_LocalPosition: {x: 9.340046, y: -2.5771618, z: 0}
   m_LocalScale: {x: 1, y: 0.49555, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.337}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.495}
 --- !u!1 &2066227271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,7 +3176,7 @@ MonoBehaviour:
   speed: 275
   Explosion: {fileID: 2288900153424672663, guid: 21221eedb16ebc04a9779bcc28f37abd, type: 3}
   Powerup: {fileID: 4976237906704043460, guid: 42198317f80ecea4898aded69458daf9, type: 3}
-  bounce: {fileID: 8300000, guid: 747a4f9b458390e4eba059e57769056b, type: 3}
+  bounce: {fileID: 8300000, guid: ff24e6b19c0da2f4d9a2d16917d2599e, type: 3}
 --- !u!82 &2089690170
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3184,7 +3187,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 747a4f9b458390e4eba059e57769056b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ff24e6b19c0da2f4d9a2d16917d2599e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

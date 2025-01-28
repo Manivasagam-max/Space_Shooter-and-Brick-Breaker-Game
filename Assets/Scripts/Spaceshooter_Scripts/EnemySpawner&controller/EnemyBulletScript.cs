@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyBulletScript : MonoBehaviour
 {
-    
+
     public float speed = 2f;
-    
+
     private GameManagerScript gm;
     void Start()
     {

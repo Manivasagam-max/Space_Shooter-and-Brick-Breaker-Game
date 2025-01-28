@@ -14,48 +14,57 @@ public class GameManage4S : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverPanel;
     public int numberOfBricks;
-    public int playerSideBricks; 
-    public int enemySideBricks; 
+    public int playerSideBricks;
+    public int enemySideBricks;
     public bool gameOver;
-   
+    public GameObject NextLevelPanel;
+
     void Start()
     {
-         lives = 3; // Reset lives to 3
+        lives = 3; // Reset lives to 3
         score = 0; // Reset score to 0
         livesText.text = "Lives: " + lives;
         scoreText.text = "Score: " + score;
-         if (FindObjectOfType<BrickType>() != null)
+        if (FindObjectOfType<BrickType>() != null)
         {
-            playerSideBricks = CountBricksWithId(1); 
-            enemySideBricks = CountBricksWithId(2); 
+            playerSideBricks = CountBricksWithId(1);
+            enemySideBricks = CountBricksWithId(2);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-          if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             GameOver();
-        } 
-         if (FindObjectOfType<BrickType>() != null)
+        }
+        if (FindObjectOfType<BrickType>() != null)
         {
-            playerSideBricks = CountBricksWithId(1); 
-            enemySideBricks = CountBricksWithId(2); 
+            playerSideBricks = CountBricksWithId(1);
+            enemySideBricks = CountBricksWithId(2);
             if (playerSideBricks <= 1 || enemySideBricks <= 1)
             {
                 GameOver();
             }
-        }else {
-        numberOfBricks=GameObject.FindGameObjectsWithTag("Brick").Length;
+        }
+        else
+        {
+            numberOfBricks = GameObject.FindGameObjectsWithTag("Brick").Length;
+            if (score >= 20)
+            {
+                nextLevelPanel();
+            }
         }
     }
-     void GameOver(){
-        gameOver=true;
+    void GameOver()
+    {
+        gameOver = true;
         gameOverPanel.SetActive(true);
-        if(gameOverPanel.activeSelf){
-          bscript.ballrb.velocity=Vector2.zero;
-          bscript.inPlay=false;
+        if (gameOverPanel.activeSelf)
+        {
+            bscript.ballrb.velocity = Vector2.zero;
+            bscript.inPlay = false;
         }
     }
     public void UpdateLives(int changeInLives)
@@ -70,25 +79,25 @@ public class GameManage4S : MonoBehaviour
 
         livesText.text = "Lives: " + lives;
     }
-     public void UpdateScore(int points){
-        
-        score+=points;
+    public void UpdateScore(int points)
+    {
 
-        scoreText.text="Score:"+score;
+        score += points;
+
+        scoreText.text = "Score:" + score;
     }
-     public void PlayAgain(){
+    public void PlayAgain()
+    {
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
     }
-    public void Quit(){
-        Application.Quit();
-        Debug.Log("Game quit");
-    }
-     public void UpdateNumberOfBricks(){
-       
+
+    public void UpdateNumberOfBricks()
+    {
+
         numberOfBricks--;
-        }
-        private int CountBricksWithId(int brickId)
+    }
+    private int CountBricksWithId(int brickId)
     {
         int count = 0;
 
@@ -103,5 +112,25 @@ public class GameManage4S : MonoBehaviour
         }
 
         return count;
+    }
+    public void Back()
+    {
+        SceneManager.LoadScene("BB_Level");
+
+    }
+    void nextLevelPanel()
+    {
+        gameOver = true;
+        NextLevelPanel.SetActive(true);
+        if (NextLevelPanel.activeSelf)
+        {
+            bscript.ballrb.velocity = Vector2.zero;
+            bscript.inPlay = false;
+        }
+
+    }
+    public void go_to_FifthLevel()
+    {
+        SceneManager.LoadScene("Main_4");
     }
 }

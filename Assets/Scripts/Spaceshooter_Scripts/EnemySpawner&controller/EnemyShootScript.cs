@@ -6,8 +6,6 @@ public class EnemyShootScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject Enemy_bullet;
-
-
     public AudioClip laserSound;
     private AudioSource audioSource;
 

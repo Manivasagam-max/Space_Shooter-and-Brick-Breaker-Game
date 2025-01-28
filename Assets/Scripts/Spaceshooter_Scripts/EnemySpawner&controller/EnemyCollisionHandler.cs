@@ -10,23 +10,23 @@ public class EnemyCollisionHandler : MonoBehaviour
     private GameManagerScript gm;
     public AudioClip ExplosionSound;
     private AudioSource audioSource;
-    
-   
+
+
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         Ps = FindObjectOfType<PlayerScore>();
         animator = GetComponent<Animator>();
-        gm=FindObjectOfType<GameManagerScript>();
+        gm = FindObjectOfType<GameManagerScript>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         // Check the other object is tagged as a laser
-        if (other.CompareTag("Laser")  && !isDestroyed)
+        if (other.CompareTag("Laser") && !isDestroyed)
         {
-            
+
             animator.SetTrigger("TriggerExplosion"); // Play destruction animation
             if (audioSource != null && ExplosionSound != null)
             {
@@ -34,20 +34,20 @@ public class EnemyCollisionHandler : MonoBehaviour
             }
             isDestroyed = true; // Mark enemy as destroyed
             Destroy(other.gameObject);
+            //Added powerup Shield 
             // randomfall = Random.Range(1, 100);
             // if (randomfall < 20)
             // {
             //     Instantiate(Powerup_Shield, other.transform.position, other.transform.rotation);
             // }
         }
-       
+
     }
-    
+
     public void DestroyEnemy()
     {
         gameObject.SetActive(false);
-        Destroy(gameObject);// Destroy the enemy
-        // Add score after ensuring destruction
+        Destroy(gameObject);
         Ps.AddScore();
     }
 }

@@ -36,11 +36,6 @@ public class PlayerScore : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void AddScore()
     {
 
@@ -66,8 +61,6 @@ public class PlayerScore : MonoBehaviour
         }
         if (File.Exists(F_path))
         {
-            // string[] lines = File.ReadAllLines(F_path);
-
             currentScore += 2;
             ScoreText.text = $"Score: {currentScore}";
             string data = $"{currentScore},{currentLevel}";
@@ -75,15 +68,14 @@ public class PlayerScore : MonoBehaviour
         }
 
     }
-    public void DeductScore(){
-         if (!File.Exists(F_path))
+    public void DeductScore()
+    {
+        if (!File.Exists(F_path))
         {
             File.WriteAllText(F_path, "0,0");
         }
         if (File.Exists(F_path))
         {
-            // string[] lines = File.ReadAllLines(F_path);
-
             currentScore -= 5;
             ScoreText.text = $"Score: {currentScore}";
             string data = $"{currentScore},{currentLevel}";

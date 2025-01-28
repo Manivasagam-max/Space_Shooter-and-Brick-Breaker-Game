@@ -8,23 +8,23 @@ public class AsteroidEnemySpawner : MonoBehaviour
     public GameObject[] enemies;   // Array of enemy prefabs
 
     // public float spawnInterval = 7f; // Interval between spawns
-    public float minX = -8f;         // Minimum X position for spawning
-    public float maxX = 8f;          // Maximum X position for spawning
+    public float minX = -8f;         // Minimum X position for spawning(horizontal spawing position minimum)
+    public float maxX = 8f;          // Maximum X position for spawning(horizontal spawing position Maximum)
     public float spawnHeight = 6f;
 
     public bool[] spawnSequence; // Sequence of spawns: true for asteroid, false for enemy
 
     private GameObject currentSpawnedObject;
     private GameManagerScript gameManager;
-    
+
 
     private int sequenceIndex = 0; // Current index in the spawn sequence
 
-    
+
     void Start()
     {
         gameManager = FindObjectOfType<GameManagerScript>();
-        SpawnObject(); 
+        SpawnObject();
     }
 
     void Update()
@@ -36,7 +36,7 @@ public class AsteroidEnemySpawner : MonoBehaviour
         // timer_r += Time.deltaTime;
         // // Debug.Log(timer_r);
         // if (timer_r >= spawnInterval)
-         if (currentSpawnedObject== null)
+        if (currentSpawnedObject == null)
         {
 
             // SpawnAsteroid();

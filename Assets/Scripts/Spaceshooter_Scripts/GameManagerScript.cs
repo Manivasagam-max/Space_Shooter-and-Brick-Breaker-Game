@@ -67,20 +67,13 @@ public class GameManagerScript : MonoBehaviour
             timer = 0;
             GameOver();
         }
-
-
-
-
     }
     private void savedata()
     {
-
         //using the currentscore variable in playerscore to append the player score in csv file when game ends
         int currentscores = Playerscore.currentScore;
         string score = $"{currentscores},{currentLevel}";
         File.WriteAllText(path, score);
-
-
     }
 
     public void GameOver()
@@ -94,8 +87,6 @@ public class GameManagerScript : MonoBehaviour
 
         timerText.text = "Time:0s";
         isGameOver = true; // Set game over state 
-
-
     }
     public void restart()
     {
@@ -188,7 +179,7 @@ public class GameManagerScript : MonoBehaviour
         File.WriteAllText(path, data);
         SceneManager.LoadScene("SpaceShooter_Level7");
     }
-      public void eigthlevel()
+    public void eigthlevel()
     {
         finalScore = 0;
         if (currentLevel <= 8)
@@ -210,7 +201,8 @@ public class GameManagerScript : MonoBehaviour
         File.WriteAllText(path, data);
         SceneManager.LoadScene("SpaceShooter_Level9");
     }
-    public void tenthlevel() {
+    public void tenthlevel()
+    {
         finalScore = 0;
         if (currentLevel <= 10)
         {

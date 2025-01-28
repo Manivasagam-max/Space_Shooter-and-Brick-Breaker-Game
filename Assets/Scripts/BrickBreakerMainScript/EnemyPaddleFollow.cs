@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPaddleFollow : MonoBehaviour
 {
-    public Transform ball; // Reference to the ball
+    public Transform ball;
     public float followSpeed = 5f; // Speed at which the enemy paddle follows the ball
     public float leftscreenedge = -7f; // Left boundary
     public float rightscreenedge = 7f; // Right boundary
@@ -13,7 +13,6 @@ public class EnemyPaddleFollow : MonoBehaviour
     {
         if (ball != null)
         {
-            // Check if the ball is below or at the same level as the paddle
             if (ball.position.y <= transform.position.y)
             {
                 // Smoothly follow the ball on the X-axis

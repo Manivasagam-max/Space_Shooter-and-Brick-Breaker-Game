@@ -23,12 +23,12 @@ public class Player_controller_DoubleBullet : MonoBehaviour
 
     private GameManagerScript gm;
     private Player_collision_handler pc;
-    
+
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        pc=FindObjectOfType<Player_collision_handler>();
+        pc = FindObjectOfType<Player_collision_handler>();
         gm = FindObjectOfType<GameManagerScript>();
     }
 
@@ -95,22 +95,21 @@ public class Player_controller_DoubleBullet : MonoBehaviour
         // Check if it's time to shoot
         if (timeSinceLastShot >= ShootInterval)
         {
-            if(!pc.IsBlinking){
-            StartCoroutine(DoubleBulletAttack());
-            timeSinceLastShot = 0f; // Reset timer after shooting
-        }
+            if (!pc.IsBlinking)
+            {
+                StartCoroutine(DoubleBulletAttack());
+                timeSinceLastShot = 0f; // Reset timer after shooting
+            }
         }
     }
 
     IEnumerator DoubleBulletAttack()
     {
-        // Spawn the first bullet
         SpawnBullet();
 
         // Wait for a short interval before spawning the second bullet
         yield return new WaitForSeconds(doubleBulletInterval);
 
-        // Spawn the second bullet
         SpawnBullet1();
     }
 
@@ -126,8 +125,9 @@ public class Player_controller_DoubleBullet : MonoBehaviour
             audioSource.PlayOneShot(laserSound);
         }
     }
-    void SpawnBullet1(){
-       GameObject Laser = Instantiate(Player_bullet, spawnPoint2.position, Quaternion.identity);
+    void SpawnBullet1()
+    {
+        GameObject Laser = Instantiate(Player_bullet, spawnPoint2.position, Quaternion.identity);
         // Destroy laser after 3.5 seconds to prevent clutter
         Destroy(Laser, 3.5f);
 
@@ -135,7 +135,7 @@ public class Player_controller_DoubleBullet : MonoBehaviour
         if (audioSource != null && laserSound != null)
         {
             audioSource.PlayOneShot(laserSound);
-        } 
+        }
     }
 
     public void DestroyPlayer()

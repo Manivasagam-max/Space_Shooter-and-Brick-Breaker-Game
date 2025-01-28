@@ -24,7 +24,7 @@ public class AsteroidCollisionHandler : MonoBehaviour
         {
             isDestroyed = true; // Mark asteroid as destroyed
             animator.SetTrigger("TriggerDestroy"); // Play destruction animation
-             if (audioSource != null && ExplosionSound != null)
+            if (audioSource != null && ExplosionSound != null)
             {
                 audioSource.PlayOneShot(ExplosionSound);
             }

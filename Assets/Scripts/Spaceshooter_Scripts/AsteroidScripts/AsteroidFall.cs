@@ -12,7 +12,6 @@ public class AsteroidFall : MonoBehaviour
         transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
     }
 
-    //  method to change speed if needed while in game
     public void SetFallSpeed(float newSpeed)
     {
         fallSpeed = newSpeed;

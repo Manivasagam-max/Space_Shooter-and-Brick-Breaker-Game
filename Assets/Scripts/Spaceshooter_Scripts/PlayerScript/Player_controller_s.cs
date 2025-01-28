@@ -27,7 +27,7 @@ public class Player_controller_s : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         gm = FindObjectOfType<GameManagerScript>();
-        pc=FindObjectOfType<Player_collision_handler>();
+        pc = FindObjectOfType<Player_collision_handler>();
     }
 
     // Update is called once per frame
@@ -94,9 +94,10 @@ public class Player_controller_s : MonoBehaviour
         // Check if it's time to shoot
         if (timeSinceLastShot >= ShootInterval)
         {
-            if(!pc.IsBlinking){
-            Attack();
-            timeSinceLastShot = 0f;  // Reset timer after shooting
+            if (!pc.IsBlinking)
+            {
+                Attack();
+                timeSinceLastShot = 0f;  // Reset timer after shooting
             }
         }
     }

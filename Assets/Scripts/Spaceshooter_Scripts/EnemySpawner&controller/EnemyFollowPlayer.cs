@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyFollowPlayer : MonoBehaviour
 {
-     public float followSpeed = 1.5f;  // Speed at which the enemy follows the player
-     private Transform player;        // Reference to the player's transform
+    public float followSpeed = 1.5f;  // Speed at which the enemy follows the player
+    private Transform player;        // Reference to the player's transform
 
     void Start()
     {

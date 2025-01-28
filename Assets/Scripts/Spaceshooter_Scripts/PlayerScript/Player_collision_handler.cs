@@ -16,24 +16,24 @@ public class Player_collision_handler : MonoBehaviour
     private bool isBlinking = false;
     public bool IsBlinking => isBlinking;
     private Renderer playerRenderer;
-    
-      
-   
+
+
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManagerScript>();
-        ps=FindObjectOfType<PlayerScore>();
+        ps = FindObjectOfType<PlayerScore>();
         playerRenderer = GetComponent<Renderer>();
-        
-        
+
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the player is hit by an asteroid
-        if ((other.CompareTag("Asteroid") && !isDestroyed)||(other.CompareTag("Enemy")&&!isDestroyed)||(other.CompareTag("EnemyLaser")&&!isDestroyed))//check if any asteroid or enemy hit the player 
+        if ((other.CompareTag("Asteroid") && !isDestroyed) || (other.CompareTag("Enemy") && !isDestroyed) || (other.CompareTag("EnemyLaser") && !isDestroyed))//check if any asteroid or enemy hit the player 
         {
             // Trigger the explosion animation , 
             // animator.SetTrigger("TriggerExplosion");
@@ -48,12 +48,12 @@ public class Player_collision_handler : MonoBehaviour
             // isDestroyed = true;
 
             // gameManager.GameOver(); // Trigger game over
-                                    //  destroy  the asteroid
+            //  destroy  the asteroid
             Destroy(other.gameObject);
         }
-       
+
     }
-     IEnumerator Blink()
+    IEnumerator Blink()
     {
         isBlinking = true;
         float endTime = Time.time + blinkDuration;
@@ -69,5 +69,5 @@ public class Player_collision_handler : MonoBehaviour
         playerRenderer.enabled = true;
         isBlinking = false;
     }
-    
+
 }

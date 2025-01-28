@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class EnemyDropPowerUpScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float speed;
-    void Start()
-    {
-        
-    }
+  // Start is called before the first frame update
+  public float speed;
+  void Update()
+  {
+    transform.Translate(new Vector2(0f, -1f) * Time.deltaTime * speed);
 
-    // Update is called once per frame
-    void Update()
+    if (transform.position.y < -5.3f)
     {
-     transform.Translate(new Vector2(0f,-1f)*Time.deltaTime*speed);  
-
-      if(transform.position.y<-5.3f){
-        Destroy(gameObject);
-      } 
+      Destroy(gameObject);
     }
+  }
 }

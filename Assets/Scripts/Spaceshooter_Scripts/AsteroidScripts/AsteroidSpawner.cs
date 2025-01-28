@@ -31,7 +31,7 @@ public class AsteroidSpawner : MonoBehaviour
         // timer_r += Time.deltaTime;
         // // Debug.Log(timer_r);
         // if (timer_r >= spawnInterval)
-         if (currentAsteroid == null)
+        if (currentAsteroid == null)
         {
             SpawnAsteroid();
             // timer_r = 0;
@@ -49,6 +49,6 @@ public class AsteroidSpawner : MonoBehaviour
         Vector3 spawnPosition = new Vector3(randomX, spawnY, 0f);
 
         // Instantiate the asteroid prefab 
-        currentAsteroid=Instantiate(asteroidPrefab, spawnPosition, Quaternion.identity);
+        currentAsteroid = Instantiate(asteroidPrefab, spawnPosition, Quaternion.identity);
     }
 }
