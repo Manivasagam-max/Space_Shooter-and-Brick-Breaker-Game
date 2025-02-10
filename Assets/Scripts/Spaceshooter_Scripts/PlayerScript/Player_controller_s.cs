@@ -40,8 +40,7 @@ public class Player_controller_s : MonoBehaviour
     {
         if (gm != null && gm.isGameOver)
         {
-            return; // Stop spawning when the game is over
-
+            return; 
         }
         if (Input.GetAxisRaw("Horizontal") > 0f)
         {
@@ -85,7 +84,7 @@ public class Player_controller_s : MonoBehaviour
     {
         if (gm != null && gm.isGameOver)
         {
-            return; // Stop spawning when the game is over
+            return;
 
         }
         // Track time passed
