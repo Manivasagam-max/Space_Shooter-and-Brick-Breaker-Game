@@ -56,24 +56,10 @@ public class HoleSelector : MonoBehaviour
         }
     }
 
-    // void HandleMouseSelection()
-    // {
-    // //     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    // // mousePosition.z = 0; // Ensure it's on the correct plane
-    // Vector3 position=mouse_pointer.position;
-
-    // Transform nearestHole = FindNearestHole(position);
-    // if (nearestHole != null)
-    // {
-    //     selectedHoleIndex = System.Array.IndexOf(holes, nearestHole);
-    //     UpdateSelectionIndicator();
-    // }
-    // }
+   
     void HandleMouseSelection()
 {
     Vector3 position=mouse_pointer.position;
-    // Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    // mousePosition.z = 0; // Ensure it's in the correct 2D plane
 
     float selectionRadius = 1.0f; // Adjust this value to set how close the mouse must be
 
