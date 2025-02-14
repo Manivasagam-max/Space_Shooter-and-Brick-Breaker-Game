@@ -56,19 +56,49 @@ public class HoleSelector : MonoBehaviour
         }
     }
 
-    void HandleMouseSelection()
-    {
-    //     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    // mousePosition.z = 0; // Ensure it's on the correct plane
-    Vector3 position=mouse_pointer.position;
+    // void HandleMouseSelection()
+    // {
+    // //     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    // // mousePosition.z = 0; // Ensure it's on the correct plane
+    // Vector3 position=mouse_pointer.position;
 
-    Transform nearestHole = FindNearestHole(position);
-    if (nearestHole != null)
+    // Transform nearestHole = FindNearestHole(position);
+    // if (nearestHole != null)
+    // {
+    //     selectedHoleIndex = System.Array.IndexOf(holes, nearestHole);
+    //     UpdateSelectionIndicator();
+    // }
+    // }
+    void HandleMouseSelection()
+{
+    Vector3 position=mouse_pointer.position;
+    // Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    // mousePosition.z = 0; // Ensure it's in the correct 2D plane
+
+    float selectionRadius = 1.0f; // Adjust this value to set how close the mouse must be
+
+    Transform closestHole = null;
+    float closestDistance = selectionRadius; // Start with max distance allowed
+
+    // Find the closest hole within the selection radius
+    foreach (Transform hole in holes)
     {
-        selectedHoleIndex = System.Array.IndexOf(holes, nearestHole);
+        float distance = Vector3.Distance(position, hole.position);
+        if (distance < closestDistance)
+        {
+            closestHole = hole;
+            closestDistance = distance;
+        }
+    }
+
+    // Only update selection if a hole is within the required range
+    if (closestHole != null)
+    {
+        selectedHoleIndex = System.Array.IndexOf(holes, closestHole);
         UpdateSelectionIndicator();
     }
-    }
+}
+
 
     Transform FindNearestHole(Vector3 position)
     {
