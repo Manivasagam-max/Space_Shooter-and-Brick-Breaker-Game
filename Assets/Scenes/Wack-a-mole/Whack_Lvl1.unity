@@ -664,10 +664,12 @@ MonoBehaviour:
   - {fileID: 1860297484}
   popUpHeight: 0.83
   popDownDistance: 1.5
-  speed: 4.18
-  minWait: 1.45
-  maxWait: 2.25
+  speed: 4.13
+  minWait: 0.94
+  maxWait: 1.73
   popUpTime: 1.5
+  cursorDetectionRadius: 4.27
+  cursorDetectionChance: 0.75
 --- !u!1 &312690816
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,8 +766,8 @@ Transform:
   m_GameObject: {fileID: 312690816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.38, y: 3.76, z: 0}
-  m_LocalScale: {x: 0.15794036, y: 0.13635096, z: 1}
+  m_LocalPosition: {x: -8.6132, y: 3.8171, z: 0}
+  m_LocalScale: {x: 0.06683398, y: 0.066030346, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

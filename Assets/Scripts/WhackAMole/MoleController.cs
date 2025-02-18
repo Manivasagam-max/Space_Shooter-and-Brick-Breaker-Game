@@ -1,6 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class MoleController : MonoBehaviour
 {
@@ -11,27 +11,31 @@ public class MoleController : MonoBehaviour
     public float minWait = 1f;
     public float maxWait = 3f;
     public float popUpTime = 1.5f;
-    public float cursorDetectionRadius = 1.5f; // Radius within which the mole detects the cursor
-    public float escapeChance = 0.5f; // 50% chance to escape when cursor is detected
+    public float cursorDetectionRadius = 1.5f; // Detection radius
+    [Range(0f, 1f)] 
+    public float cursorDetectionChance = 0.5f; // 50% chance to detect cursor
 
     private Transform currentHole;
     private Vector3 hiddenPosition;
     private Vector3 visiblePosition;
     private bool moleVisible = false;
     private bool hasBeenHit = false; // Prevent multiple scoring on a single mole
+    private bool canDetectCursor = false; // Randomly decide if the mole can detect the cursor
 
     public static MoleController Instance;
     private GameManagerW gm;
     private bool panel = true;
+    private int lastHoleIndex = -1;
+    private List<int> recentHoles = new List<int>(); // Store recent holes
 
     void Awake()
     {
-        gm = FindObjectOfType<GameManagerW>();
         Instance = this;
     }
 
     void Start()
     {
+        gm = FindObjectOfType<GameManagerW>();
         StartCoroutine(MoleRoutine());
     }
 
@@ -53,15 +57,15 @@ public class MoleController : MonoBehaviour
         while (panel)
         {
             yield return new WaitForSeconds(Random.Range(minWait, maxWait));
-
             PickNewHole();
+
+            // Decide if the mole will detect the cursor this time
+            canDetectCursor = Random.value < cursorDetectionChance;
 
             yield return MoveMole(visiblePosition);
             moleVisible = true;
             hasBeenHit = false; // Reset hit detection
-
             yield return new WaitForSeconds(popUpTime);
-
             yield return MoveMole(hiddenPosition);
             moleVisible = false;
         }
@@ -69,12 +73,24 @@ public class MoleController : MonoBehaviour
 
     void PickNewHole()
     {
-        int randomIndex = Random.Range(0, holes.Length);
-        currentHole = holes[randomIndex];
+        int randomIndex;
+        do
+        {
+            randomIndex = Random.Range(0, holes.Length);
+        }
+        while (recentHoles.Contains(randomIndex) && holes.Length > 2); // Avoid recent holes
 
+        lastHoleIndex = randomIndex;
+        recentHoles.Add(randomIndex);
+
+        if (recentHoles.Count > 2)
+        {
+            recentHoles.RemoveAt(0);
+        }
+
+        currentHole = holes[randomIndex];
         hiddenPosition = currentHole.position + Vector3.down * popDownDistance;
         visiblePosition = currentHole.position + Vector3.up * popUpHeight;
-
         transform.position = hiddenPosition;
         moleVisible = false;
     }
@@ -91,31 +107,61 @@ public class MoleController : MonoBehaviour
 
     public bool IsMoleAtHole(Transform hole)
     {
-        return moleVisible && currentHole == hole;
+        return moleVisible && currentHole == hole && transform.position == visiblePosition;
     }
 
     public void ForceMoleDown()
     {
         StopAllCoroutines();
-        StartCoroutine(ForceMoveDown());
+        StartCoroutine(EscapeToNewHole());
     }
 
-    IEnumerator ForceMoveDown()
+    IEnumerator EscapeToNewHole()
     {
+        // Move the mole down
         yield return MoveMole(hiddenPosition);
         moleVisible = false;
-        yield return new WaitForSeconds(0.5f);
-        StartCoroutine(MoleRoutine()); // Restart cycle
+
+        // Pick a new hole before popping up again
+        PickNewHole();
+        yield return new WaitForSeconds(1f); 
+
+        // Immediately pop up from the new hole
+        yield return MoveMole(visiblePosition);
+        moleVisible = true;
+        hasBeenHit = false; // Reset hit detection
     }
+//     IEnumerator EscapeToNewHole()
+// {
+//     // Instantly hide the mole (skip Lerp animation)
+//     transform.position = hiddenPosition;
+//     moleVisible = false;
+
+//     // Pick a new hole before popping up again
+//     PickNewHole();
+
+//     // Instantly place the mole at the new hole's hidden position
+//     transform.position = hiddenPosition;
+
+//     // Wait a small delay to make it feel natural (optional)
+//     yield return new WaitForSeconds(0.2f);
+
+//     // Move the mole up normally
+//     yield return MoveMole(visiblePosition);
+//     moleVisible = true;
+//     hasBeenHit = false; // Reset hit detection
+// }
+
 
     void DetectCursorProximity()
     {
-        Vector3 cursorWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        cursorWorldPosition.z = 0; // Ensure it's in the correct plane
+        if (!canDetectCursor) return; // Skip detection if not enabled for this pop-up
 
+        Vector3 cursorWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        cursorWorldPosition.z = 0;
         float distance = Vector3.Distance(transform.position, cursorWorldPosition);
-        
-        if (distance < cursorDetectionRadius && Random.value < escapeChance) // 50% chance to escape
+
+        if (distance < cursorDetectionRadius)
         {
             Debug.Log("Cursor detected! Mole escaping...");
             ForceMoleDown();

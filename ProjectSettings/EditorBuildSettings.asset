@@ -12,19 +12,19 @@ EditorBuildSettings:
     path: Assets/Scenes/BrickBreaker/BB_Level.unity
     guid: debb8887c1aa13d41afdaec59cc48182
   - enabled: 1
-    path: Assets/Scenes/BrickBreaker/Main_0.unity
+    path: Assets/Scenes/BrickBreaker/Main_2.unity
     guid: d1fd65ef6fb99be4cb657b2c7963ecad
   - enabled: 1
-    path: Assets/Scenes/BrickBreaker/Main_1.unity
+    path: Assets/Scenes/BrickBreaker/Main_3.unity
     guid: 5d7162733c2be2646803e7905b7d0d53
   - enabled: 1
-    path: Assets/Scenes/BrickBreaker/Main_2.unity
+    path: Assets/Scenes/BrickBreaker/Main_4.unity
     guid: 1b9311208ade3fe4e80c875b9d4b13c4
   - enabled: 1
-    path: Assets/Scenes/BrickBreaker/Main_3.unity
+    path: Assets/Scenes/BrickBreaker/Main_1.unity
     guid: ea464295a76d33e4aa18bba5ce1b46ca
   - enabled: 1
-    path: Assets/Scenes/BrickBreaker/Main_4.unity
+    path: Assets/Scenes/BrickBreaker/Main_4_5.unity
     guid: 14aa4694c2397964cbfbf2704b6a5ece
   - enabled: 0
     path: Assets/Scenes/BrickBreaker/Main1.unity

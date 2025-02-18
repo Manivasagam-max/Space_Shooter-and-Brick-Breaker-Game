@@ -750,12 +750,12 @@ MonoBehaviour:
   - {fileID: 1939431155}
   popUpHeight: 0.83
   popDownDistance: 1.5
-  speed: 4.18
-  minWait: 1.45
-  maxWait: 2.25
+  speed: 5.4
+  minWait: 0.95
+  maxWait: 1.61
   popUpTime: 1.5
   cursorDetectionRadius: 3.38
-  escapeChance: 1.08
+  cursorDetectionChance: 0.74
 --- !u!1 &449129985
 GameObject:
   m_ObjectHideFlags: 0

@@ -2233,6 +2233,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4397bc03aefed384f805e93e68022919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelButtons:
+  - {fileID: 2069049935}
+  - {fileID: 667545094}
+  - {fileID: 1052057009}
+  - {fileID: 1868644004}
+  - {fileID: 2102276896}
 --- !u!4 &2135048695
 Transform:
   m_ObjectHideFlags: 0
