@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.IO;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 
@@ -76,6 +77,9 @@ public class GameManager : MonoBehaviour
             Timer = 0;
             GameOver();
         }
+        if(score>=requiredScore){
+            nextLevelPanel();
+        }
     }
     public void UpdateLives(int changeInLives)
     {
@@ -105,17 +109,12 @@ public class GameManager : MonoBehaviour
         numberOfBricks--;
         if (numberOfBricks <= 0)
         {
-            if (currentLevelIndex >= levels.Length - 1)
+            if (currentLevelIndex >= levels.Length - 1 )
             {
-                if(score>=requiredScore){
-                nextLevelPanel();
-                }
-                else{
-                    GameOver();
-                }
-            }else if(score>=requiredScore){
+                
                 nextLevelPanel();
             }
+           
             else
             {
                 //  loadLevelPanel.SetActive(true);

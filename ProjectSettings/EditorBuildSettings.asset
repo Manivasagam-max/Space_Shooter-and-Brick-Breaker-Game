@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BrickBreaker/Main_1.unity
     guid: ea464295a76d33e4aa18bba5ce1b46ca
   - enabled: 1
-    path: Assets/Scenes/BrickBreaker/Main_4_5.unity
+    path: Assets/Scenes/BrickBreaker/Main_5.unity
     guid: 14aa4694c2397964cbfbf2704b6a5ece
   - enabled: 0
     path: Assets/Scenes/BrickBreaker/Main1.unity
