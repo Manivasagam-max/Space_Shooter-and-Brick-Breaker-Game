@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7159860546481209899}
   - component: {fileID: 964852615273707198}
   m_Layer: 0
-  m_Name: BricksLevel_4 form 4
+  m_Name: BricksLevel_1 form 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
