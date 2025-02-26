@@ -3261,7 +3261,7 @@ MonoBehaviour:
   ballrb: {fileID: 2089690166}
   inPlay: 0
   paddle: {fileID: 2114618415}
-  speed: 275
+  speed: 285
   Explosion: {fileID: 2288900153424672663, guid: 21221eedb16ebc04a9779bcc28f37abd, type: 3}
   Powerup: {fileID: 4976237906704043460, guid: 42198317f80ecea4898aded69458daf9, type: 3}
   bounce: {fileID: 8300000, guid: ff24e6b19c0da2f4d9a2d16917d2599e, type: 3}
