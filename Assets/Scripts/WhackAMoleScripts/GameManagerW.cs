@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManagerW : MonoBehaviour
 {
@@ -21,6 +23,8 @@ public class GameManagerW : MonoBehaviour
     private bool moleIsActive = false;
     public int Level;
     private string filepath = Path.Combine(Application.dataPath, "Patient_Data", "Whack_Score.csv");
+     public Image scoreProgressBar; 
+    private HoleSelector hs;
 
     void Start()
     {
@@ -28,6 +32,14 @@ public class GameManagerW : MonoBehaviour
         isgameover = false;
         StartCoroutine(SpawnMoles());
         Timer = gameDuration;
+        UpdateScoreProgress();
+    }
+    void UpdateScoreProgress()
+    {
+        if (scoreProgressBar != null)
+        {
+            scoreProgressBar.fillAmount = (float)hs.score / requiredscore;
+        }
     }
 
     IEnumerator SpawnMoles()
@@ -119,9 +131,9 @@ public class GameManagerW : MonoBehaviour
     }
     public void Back_to_differentGame(){
         //can add different scene or simply stop the game and quit application
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying=false;
-        #endif
+        // #if UNITY_EDITOR
+        //     UnityEditor.EditorApplication.isPlaying=false;
+        // #endif
         // Application.Quit();
     }
 }

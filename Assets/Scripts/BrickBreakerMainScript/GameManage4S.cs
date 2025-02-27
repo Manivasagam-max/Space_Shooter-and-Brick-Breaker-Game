@@ -27,6 +27,7 @@ public class GameManage4S : MonoBehaviour
     private int requiredScore = 200;
      private int Level;
     private string filepath=Path.Combine(Application.dataPath,"Patient_Data","BrickbreakerScore.csv");
+     public Image scoreProgressBar; 
 
 
     void Start()
@@ -44,13 +45,20 @@ public class GameManage4S : MonoBehaviour
         Timer = gameDuration;
         livesText.text = "Lives: " + lives;
         scoreText.text = "Score: " + score;
+        UpdateScoreProgress();
         if (FindObjectOfType<BrickType>() != null)
         {
             playerSideBricks = CountBricksWithId(1);
             enemySideBricks = CountBricksWithId(2);
         }
     }
-
+    void UpdateScoreProgress()
+    {
+        if (scoreProgressBar != null)
+        {
+            scoreProgressBar.fillAmount = (float)score / requiredScore;
+        }
+    }
     // Update is called once per frame
     void Update()
     {

@@ -254,6 +254,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI TimerText;
     public GameObject GamestartPanel;
     private int requiredScore = 200;
+     public Image scoreProgressBar; 
 
     void Start()
     {
@@ -274,7 +275,7 @@ public class GameManager : MonoBehaviour
         Timer = gameDuration;
         livesText.text = "Lives: " + lives;
         scoreText.text = "Score: " + score;
-
+        UpdateScoreProgress();
         // Choose a random formation at the start
         currentLevelIndex = Random.Range(0, levels.Length);
         spawnPosition = levels[0].transform.position;
@@ -284,6 +285,13 @@ public class GameManager : MonoBehaviour
 
         // Get the number of bricks in the formation
         numberOfBricks = GameObject.FindGameObjectsWithTag("Brick").Length;
+    }
+    void UpdateScoreProgress()
+    {
+        if (scoreProgressBar != null)
+        {
+            scoreProgressBar.fillAmount = (float)score / requiredScore;
+        }
     }
 
     void Update()

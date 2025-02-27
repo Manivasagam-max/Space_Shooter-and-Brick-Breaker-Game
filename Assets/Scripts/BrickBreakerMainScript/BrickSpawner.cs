@@ -51,7 +51,7 @@ public class BrickSpawner : MonoBehaviour
         GameObject prefabToSpawn = formations[Random.Range(0, formations.Length)];
 
         // Generate a random spawn position
-        Vector3 spawnPosition = new Vector3(Random.Range(minX, maxX), spawnHeight, 0);
+        Vector2 spawnPosition = new Vector2(Random.Range(minX, maxX), spawnHeight);
         // Debug.Log(spawnPosition);
 
         // Spawn the formation and assign it to currentFormation
