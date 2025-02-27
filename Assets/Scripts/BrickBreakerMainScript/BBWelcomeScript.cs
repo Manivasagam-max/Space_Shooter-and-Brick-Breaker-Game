@@ -15,8 +15,11 @@ public class BBWelcomeScript : MonoBehaviour
     private int currentScore = 0;
     public void Start()
     {
+        string scene=SceneManager.GetActiveScene().name;
+        if (scene=="BB_Level"){
         InitializeLevelButtons();
         Checkscore();
+        }
     }
       private void InitializeLevelButtons()
     {

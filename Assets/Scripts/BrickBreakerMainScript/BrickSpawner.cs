@@ -52,7 +52,7 @@ public class BrickSpawner : MonoBehaviour
 
         // Generate a random spawn position
         Vector3 spawnPosition = new Vector3(Random.Range(minX, maxX), spawnHeight, 0);
-        Debug.Log(spawnPosition);
+        // Debug.Log(spawnPosition);
 
         // Spawn the formation and assign it to currentFormation
         currentFormation = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
