@@ -62,12 +62,11 @@ public class Whack_WelcomeScript : MonoBehaviour
             levelButtons[i].interactable = true;
         }
     }
-    public void start(){
+    public void onclick_start(){
         SceneManager.LoadScene("Whack_levels");
     }
     public void Back(){
         // SceneManager.LoadScene("Back");
-        SceneManager.LoadScene("Whack_levels");
         // Application.Quit();
     }
     public void lvl_1(){

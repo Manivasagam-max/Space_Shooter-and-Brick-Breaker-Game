@@ -3569,9 +3569,7 @@ MonoBehaviour:
   formations:
   - {fileID: 3565682934198274534, guid: 7460f4e85b842a3419ea48755aa01f20, type: 3}
   - {fileID: 4934925433136114913, guid: 6553fc1b19c0a7f48a3dfef277a66edf, type: 3}
-  - {fileID: 5343266926586327753, guid: 818175bf74c220b40aa60dc5b8cb9077, type: 3}
   - {fileID: 5006188547577188852, guid: 218b65a3a723c934da5ae65d9ed3144e, type: 3}
-  - {fileID: 3138275230771414590, guid: 65194e823c793e141b32e1863736f1cb, type: 3}
   spawnHeight: 11
   minX: -2.5
   maxX: 2.5

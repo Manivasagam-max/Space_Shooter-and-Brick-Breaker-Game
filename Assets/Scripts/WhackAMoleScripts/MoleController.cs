@@ -5,34 +5,43 @@ public class MoleController : MonoBehaviour
 {
     public float popUpHeight = 1.5f;
     public float speed = 5f;
-    public float popUpTime = 1.5f;
+    public float popUpTime = 1.5f; // Only for Levels > 2
 
     private Vector3 hiddenPosition;
     private Vector3 visiblePosition;
     private bool moleVisible = false;
     private bool hasBeenHit = false;
+    private GameManagerW gm;
+
+    public bool IsMoleActive() => moleVisible;
 
     void Start()
     {
-        hiddenPosition = transform.position; // Mole starts hidden
+        gm = FindObjectOfType<GameManagerW>();
+        hiddenPosition = transform.position;
         visiblePosition = transform.position + Vector3.up * popUpHeight;
-        transform.position = hiddenPosition; // Ensure mole starts hidden
-    }
-    
-
-    public void StartMoleRoutine()
-    {
-        if (!moleVisible) StartCoroutine(MoleRoutine());
+        transform.position = hiddenPosition; // Start hidden
     }
 
-    IEnumerator MoleRoutine()
+    public IEnumerator StartMoleRoutine(bool waitForHit)
     {
         yield return MoveMole(visiblePosition);
         moleVisible = true;
         hasBeenHit = false;
-        yield return new WaitForSeconds(popUpTime);
+
+        if (waitForHit)
+        {
+            yield return new WaitUntil(() => hasBeenHit); // Wait until the mole is hit
+        }
+        else
+        {
+            yield return new WaitForSeconds(popUpTime); // Disappear after some time
+        }
+
         yield return MoveMole(hiddenPosition);
         moleVisible = false;
+
+        gm.MoleCycleComplete(); // Notify GameManager
     }
 
     IEnumerator MoveMole(Vector3 target)
@@ -64,9 +73,12 @@ public class MoleController : MonoBehaviour
     {
         if (moleVisible)
         {
+            StopAllCoroutines();
             StartCoroutine(MoveMole(hiddenPosition));
             moleVisible = false;
+            gm.MoleCycleComplete(); // Notify GameManager
         }
     }
 }
+
 

@@ -618,6 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b9331f180ce2a458489f861af0798f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelButtons: []
 --- !u!4 &1061460938
 Transform:
   m_ObjectHideFlags: 0
@@ -885,7 +886,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1061460937}
         m_TargetAssemblyTypeName: Whack_WelcomeScript, Assembly-CSharp
-        m_MethodName: start
+        m_MethodName: onclick_start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
