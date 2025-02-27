@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4397bc03aefed384f805e93e68022919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelButtons: []
 --- !u!1 &208608740
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +423,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 183997059}
         m_TargetAssemblyTypeName: BBWelcomeScript, Assembly-CSharp
-        m_MethodName: onclick_start
+        m_MethodName: onclick_start_ChooseLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

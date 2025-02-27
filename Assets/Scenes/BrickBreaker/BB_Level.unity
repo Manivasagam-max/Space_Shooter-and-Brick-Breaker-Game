@@ -1139,7 +1139,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2135048694}
         m_TargetAssemblyTypeName: BBWelcomeScript, Assembly-CSharp
-        m_MethodName: onclick_back
+        m_MethodName: onclick_back_to_welcomeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

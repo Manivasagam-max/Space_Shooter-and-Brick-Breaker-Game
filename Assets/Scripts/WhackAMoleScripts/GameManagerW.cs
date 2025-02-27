@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -105,5 +106,12 @@ public class GameManagerW : MonoBehaviour
             File.WriteAllText(filepath, data);
         }
         SceneManager.LoadScene("Whack_Lvl4");
+    }
+    public void Back_to_differentGame(){
+        //can add different scene or simply stop the game and quit application
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying=false;
+        #endif
+        // Application.Quit();
     }
 }

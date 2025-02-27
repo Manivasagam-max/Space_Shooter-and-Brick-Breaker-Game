@@ -65,7 +65,7 @@ public class BBWelcomeScript : MonoBehaviour
             levelButtons[i].interactable = true;
         }
     }
-    public void onclick_start()
+    public void onclick_start_ChooseLevel()
     {
         SceneManager.LoadScene("BB_Level");
     }
@@ -94,7 +94,7 @@ public class BBWelcomeScript : MonoBehaviour
     {
         SceneManager.LoadScene("Main_5");
     }
-    public void onclick_back()
+    public void onclick_back_to_welcomeScene()
     {
         SceneManager.LoadScene("BB_Welcome");
     }

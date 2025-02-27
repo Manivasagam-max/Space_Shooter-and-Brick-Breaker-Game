@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 451641044}
   - component: {fileID: 451641043}
   m_Layer: 5
-  m_Name: NextLevel
+  m_Name: RestartLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -877,7 +877,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 290260327}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: go_to_ThirdLevel
+        m_MethodName: go_to_fifthLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2698,7 +2698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Level
+  m_Text: Restart
 --- !u!222 &1423760164
 CanvasRenderer:
   m_ObjectHideFlags: 0
