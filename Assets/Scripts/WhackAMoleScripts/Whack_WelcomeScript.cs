@@ -49,9 +49,9 @@ public class Whack_WelcomeScript : MonoBehaviour
             currentScore = 0;
             currentLevel = 1;
         }
-
-        
-        UnlockLevelsBasedOnScore();
+        string scene=SceneManager.GetActiveScene().name;
+        if(scene=="Whack_levels"){
+        UnlockLevelsBasedOnScore();}
     }
         private void UnlockLevelsBasedOnScore()
     {
